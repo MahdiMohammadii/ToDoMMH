@@ -1,0 +1,48 @@
+* {
+    font-family: b nazanin;
+    transition: 0.2s;
+  }
+  body {
+    background-color: rgb(29, 28, 28);
+  }
+  div {
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 45%;
+    height: 300px;
+    background-color: rgb(136, 136, 136);
+  }
+  input {
+    margin-left: 15px;
+  }
+  .next {
+    border: none;
+    background-color: rgb(44, 37, 18);
+    color: rgb(69, 177, 73);
+    padding: 10px;
+    margin-right: 20px;
+    float: right;
+    border-radius: 10px;
+  }
+  .next:hover {
+    background-color: black;
+  }
+  .liveScore {
+    position: fixed;
+    top: 0px;
+    left: 22%;
+    display: inline-block;
+    border-radius: 20px;
+    width: 3%;
+    height: 300px;
+    background-color: rgb(168, 168, 168);
+  }
+  .liveScore p {
+    border-radius: 10px;
+    font-size: smaller;
+    font-family: b titr;
+    text-align: center;
+    background-color: rgb(240, 240, 183);
+  }

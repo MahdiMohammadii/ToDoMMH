@@ -1,0 +1,151 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      font-family: b roya;
+      text-align: center;
+    }
+    body {
+      background-image: url("1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: 1s;
+    }
+    .bye {
+      display: none;
+    }
+    p {
+      background-color: rgb(15, 92, 165);
+      color: blanchedalmond;
+      border: none;
+      font-size: medium;
+      text-align: center;
+      padding: 10px;
+      font-weight: bolder;
+      margin-left: 10%;
+      margin-right: 10%;
+      position: relative;
+      transition: 0.1s;
+    }
+    p:hover {
+      background-color: rgb(2, 34, 65);
+    }
+    input {
+      text-align: center;
+      font-size: larger;
+      width: 15%;
+      height: 30px;
+      transition: 0.3s;
+      position: absolute;
+      left: 37%;
+      border: none;
+      background-color: rgb(13, 90, 141);
+      color: cornsilk;
+    }
+    input:focus {
+      text-align: center;
+      width: 20%;
+      background-color: rgb(0, 43, 71);
+    }
+    .sabt {
+      font-size: large;
+      height: 30px;
+      width: 7%;
+      position: absolute;
+      right: 35%;
+      background-color: rgb(0, 69, 116);
+      color: cornsilk;
+      border-width: 0ch;
+      border-radius: 20%;
+    }
+    .sabt:hover {
+      background-color: rgb(0, 43, 71);
+      cursor: pointer;
+    }
+    button {
+      font-size: medium;
+      background-color: rgb(0, 50, 97);
+      color: blanchedalmond;
+      border-width: 0ch;
+      position: absolute;
+      right: 3%;
+    }
+    button:hover {
+      background-color: rgb(48, 127, 201);
+      color: rgb(0, 0, 0);
+    }
+  </style>
+  <body>
+    <p
+      style="
+        margin-right: 23%;
+        margin-left: 23%;
+        background-color: rgb(26, 83, 136);
+        color: blanchedalmond;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        padding: 10px;
+        font-weight: bolder;
+      "
+    >
+      لیست امور روزانه
+    </p>
+    <br />
+    <div style="position: relative;">
+      <input placeholder="...امروز باید " id="inp" type="text" />
+      <button
+        class="sabt"
+        style="
+          font-size: large;
+          height: 30px;
+          width: 7%;
+          position: absolute;
+          right: 35%;
+          background-color: rgb(0, 69, 116);
+          color: cornsilk;
+          border-width: 0ch;
+        "
+        onclick="send()"
+      >
+        ثبت
+      </button>
+    </div>
+    <br /><br />
+    <div id="field"></div>
+    <script>
+      var parent = document.getElementById("field");
+      var todo = document.getElementById("inp");
+      function send() {
+        if (document.getElementById("inp").value == "") {
+          alert("فیلد خالی می‌باشد");
+        } else {
+          var para = document.createElement("p");
+          var nodevalue = document.createTextNode(todo.value + "  ");
+          para.appendChild(nodevalue);
+          parent.appendChild(para);
+          document.getElementById("inp").value = "";
+          var doneBtn = document.createElement("button");
+          var doneBtnText = document.createTextNode("انجام شد");
+          var paraAtt = document.createAttribute("class");
+          doneBtn.addEventListener("click", function () {
+            paraAtt.value = "bye";
+            para.setAttributeNode(paraAtt);
+          });
+          doneBtn.appendChild(doneBtnText);
+          para.appendChild(doneBtn);
+        }
+      }
+      var backgrounds = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
+      setInterval(switchBackground, 5000);
+      function switchBackground() {
+        document.body.style.backgroundImage =
+          "url(" + backgrounds[Math.floor(Math.random() * 5)] + ")";
+      }
+    </script>
+  </body>
+</html>
